@@ -22,8 +22,9 @@ const App = () => {
         if(!ndefuse)
         {
           setcstate("You loose click to play again");
-          console.log("you cloose bomb");
+          console.log("you choose bomb");
           setCardleft(5);
+          setNdefuse(0);
         }
         else{
           setNdefuse(ndefuse-1);
@@ -39,6 +40,7 @@ const App = () => {
         setcstate("You Won Click to play again");
         console.log("you won");
         setCardleft(5);
+        setNdefuse(0);
       }
       setStyle({});
     },1000);
