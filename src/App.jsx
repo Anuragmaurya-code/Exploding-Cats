@@ -14,11 +14,8 @@ const App = () => {
   useEffect(()=>{
     
     setTimeout(()=>{
-      if(cstate==="shuffle"){
-        console.log("you choose shuffle");
-        setCardleft(5);
-      }
-      else if(cstate==="bomb" ){
+      
+      if(cstate==="bomb" ){
         if(!ndefuse)
         {
           setcstate("You loose click to play again");
@@ -35,7 +32,11 @@ const App = () => {
         setNdefuse(ndefuse+1);
         console.log(`number of defused : ${ndefuse}`);
       }
-      if(cardleft===0)
+      if(cstate==="shuffle"){
+        console.log("you choose shuffle");
+        setCardleft(5);
+      }
+      if(cardleft===0 && cstate!=="shuffle" && cstate!=='bomb')
       {
         setcstate("You Won Click to play again");
         console.log("you won");
